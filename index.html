@@ -1003,6 +1003,279 @@
             color: var(--text-primary);
             font-weight: 700;
         }
+
+        /* Add styles for the airdrop checker button */
+        .check-airdrop-btn {
+            background: #ff6b00;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .check-airdrop-btn:hover {
+            background: #ff8533;
+        }
+
+        /* Airdrop Checker Modal Styles */
+        .airdrop-checker-form {
+            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .airdrop-checker-form input {
+            padding: 12px 15px;
+            border: 2px solid var(--accent-primary);
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            background: var(--background-secondary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .airdrop-checker-form input:focus {
+            outline: none;
+            border-color: var(--accent-secondary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+
+        .airdrop-checker-form button {
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .airdrop-checker-form button:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-1px);
+        }
+
+        .airdrop-result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .airdrop-result.success {
+            background: var(--background-secondary);
+            border: 2px solid var(--accent-primary);
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .airdrop-result.error {
+            background: var(--background-secondary);
+            border: 2px solid #ff5722;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .airdrop-result.info {
+            background: var(--background-secondary);
+            border: 2px solid var(--accent-primary);
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .result-content {
+            text-align: left;
+        }
+        
+        .result-content h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .result-details {
+            margin: 20px 0;
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-size: 1.1em;
+        }
+        
+        .result-actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .result-actions button,
+        .telegram-link {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .result-actions button {
+            background: var(--accent-primary);
+            color: white;
+        }
+        
+        .result-actions button:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-1px);
+        }
+        
+        .telegram-link {
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .telegram-link:hover {
+            background: #0099dd;
+            transform: translateY(-1px);
+        }
+
+        .spinner > div {
+            background-color: var(--accent-primary);
+        }
+
+        #checkStatus {
+            color: var(--text-primary);
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+
+        /* Spinner Styles */
+        .spinner {
+            margin: 20px auto;
+            width: 70px;
+            text-align: center;
+        }
+
+        .spinner > div {
+            width: 18px;
+            height: 18px;
+            background-color: var(--accent-primary);
+            border-radius: 100%;
+            display: inline-block;
+            animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            margin: 0 3px;
+        }
+
+        .spinner .bounce1 {
+            animation-delay: -0.32s;
+        }
+
+        .spinner .bounce2 {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes sk-bouncedelay {
+            0%, 80%, 100% { 
+                transform: scale(0);
+            } 
+            40% { 
+                transform: scale(1.0);
+            }
+        }
+
+        .airdrop-result.loading {
+            text-align: center;
+            background: var(--background-secondary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        /* Fix copy button styles */
+        .result-actions button {
+            background: var(--accent-primary);
+            color: white;
+            min-width: 160px;  /* Ensure button doesn't change size when text changes */
+        }
+
+        .result-actions button i {
+            margin-right: 8px;
+        }
+
+        /* Mobile responsiveness for airdrop checker */
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 10% 5%;
+                padding: 1.5rem;
+                width: 90%;
+            }
+
+            .airdrop-checker-form {
+                gap: 10px;
+            }
+
+            .result-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .result-actions button,
+            .telegram-link {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .result-content h3 {
+                font-size: 1.2em;
+            }
+
+            .result-details {
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+
+            .airdrop-result {
+                margin-top: 15px;
+                padding: 15px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .modal-content {
+                margin: 5% 3%;
+                padding: 1rem;
+            }
+
+            .airdrop-checker-form input {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .airdrop-checker-form button {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1029,7 +1302,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="launch-badge-nav">Launching Soon</div>
+                <button onclick="openAirdropChecker()" class="check-airdrop-btn">Check Your Airdrop</button>
+                <div class="launch-badge-nav">Platform in Live Beta</div>
             </div>
         </div>
     </nav>
@@ -1432,6 +1706,19 @@
 
             <h3>5. Modifications</h3>
             <p>We reserve the right to modify these terms at any time. Continued use of the platform constitutes acceptance of modified terms.</p>
+        </div>
+    </div>
+
+    <!-- Add the Airdrop Checker Modal -->
+    <div id="airdropCheckerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAirdropChecker()">&times;</span>
+            <h2>Check Your Airdrop Status</h2>
+            <div class="airdrop-checker-form">
+                <input type="text" id="walletAddress" placeholder="Enter your XRP wallet address" />
+                <button onclick="checkAirdropStatus()">Check Status</button>
+            </div>
+            <div id="airdropResult" class="airdrop-result"></div>
         </div>
     </div>
 
@@ -1958,6 +2245,240 @@
                 };
             }
         });
+
+        // Add JavaScript for the airdrop checker functionality
+        function openAirdropChecker() {
+            document.getElementById('airdropCheckerModal').style.display = 'block';
+        }
+
+        function closeAirdropChecker() {
+            document.getElementById('airdropCheckerModal').style.display = 'none';
+        }
+
+        function hexToString(hex) {
+            let str = '';
+            for (let i = 0; i < hex.length; i += 2) {
+                str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+            }
+            return str;
+        }
+
+        async function checkAirdropStatus() {
+            const walletAddress = document.getElementById('walletAddress').value.trim();
+            const resultDiv = document.getElementById('airdropResult');
+            const adminWallet = 'rEU7R2cm5SsB4x2p7qvikgMxdtVKrusSgL';
+            
+            if (!walletAddress) {
+                resultDiv.className = 'airdrop-result error';
+                resultDiv.textContent = 'Please enter a valid wallet address';
+                return;
+            }
+
+            try {
+                // Show loading state with spinner
+                resultDiv.className = 'airdrop-result loading';
+                resultDiv.style.display = 'block';  // Ensure it's visible
+                resultDiv.innerHTML = `
+                    <div class="result-content">
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div id="checkStatus" style="margin-top: 15px;">Checking airdrop status...</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9em; margin-top: 10px; text-align: center;">
+                            <i class="fas fa-exclamation-circle"></i> Please do not refresh the page while check is in progress
+                        </div>
+                    </div>
+                `;
+
+                console.log('🔍 Starting airdrop check for wallet:', walletAddress);
+                
+                // Connect to XRPL using WebSocket
+                console.log('📡 Fetching transactions via WebSocket...');
+                const ws = new WebSocket('wss://xrplcluster.com');
+                
+                // Wait for connection
+                await new Promise((resolve, reject) => {
+                    ws.onopen = () => {
+                        console.log('🔌 WebSocket connected');
+                        resolve();
+                    };
+                    ws.onerror = (error) => {
+                        console.error('WebSocket Error:', error);
+                        reject(error);
+                    };
+                    setTimeout(() => reject(new Error('WebSocket connection timeout')), 5000);
+                });
+
+                let allTransactions = [];
+                let marker = undefined;
+                let totalChecked = 0;
+
+                do {
+                    // Get transactions from admin wallet
+                    console.log('📡 Checking admin wallet transactions...');
+                    const request = {
+                        command: 'account_tx',
+                        account: adminWallet,
+                        limit: 1000,
+                        binary: false,
+                        ...(marker ? { marker } : {})
+                    };
+
+                    ws.send(JSON.stringify(request));
+
+                    // Wait for response
+                    const response = await new Promise((resolve, reject) => {
+                        ws.onmessage = (event) => {
+                            const data = JSON.parse(event.data);
+                            resolve(data);
+                        };
+                        setTimeout(() => reject(new Error('Response timeout')), 10000);
+                    });
+
+                    if (!response?.result?.transactions) {
+                        console.error('❌ No transactions in response');
+                        break;
+                    }
+
+                    allTransactions = allTransactions.concat(response.result.transactions);
+                    marker = response.result.marker;
+                    totalChecked += response.result.transactions.length;
+                    console.log(`📦 Fetched ${response.result.transactions.length} transactions, total checked: ${totalChecked}`);
+
+                    // Update loading message
+                    document.getElementById('checkStatus').textContent = `Checking airdrop status... (Checked ${totalChecked} transactions)`;
+
+                    // Break after checking a reasonable number of transactions
+                    if (totalChecked >= 5000) {
+                        console.log('Reached maximum transaction check limit');
+                        break;
+                    }
+                } while (marker);
+
+                // Close WebSocket after fetching all transactions
+                ws.close();
+
+                console.log(`📊 Total transactions checked: ${totalChecked}`);
+
+                // Filter for payments from admin to this wallet
+                const buildxPayments = allTransactions
+                    .filter(tx => {
+                        const isPayment = tx.tx?.TransactionType === 'Payment';
+                        const isSuccess = tx.meta?.TransactionResult === 'tesSUCCESS';
+                        const isToOurWallet = tx.tx?.Destination === walletAddress;
+                        
+                        console.log(`Found payment: ${tx.tx?.hash} - From: ${tx.tx?.Account} To: ${tx.tx?.Destination}`);
+                        return isPayment && isSuccess && isToOurWallet;
+                    })
+                    .map(tx => {
+                        const amount = tx.meta?.delivered_amount || tx.tx.Amount;
+                        const date = new Date((tx.tx.date + 946684800) * 1000);
+                        
+                        // Convert hex currency to readable name if needed
+                        let currency = typeof amount === 'object' ? amount.currency : 'XRP';
+                        if (currency.length === 40) {  // It's a hex currency code
+                            try {
+                                const decoded = hexToString(currency);
+                                // Remove null bytes padding
+                                currency = decoded.replace(/\0/g, '');
+                            } catch (e) {
+                                // If decoding fails, keep the original
+                                console.log('Failed to decode currency:', e);
+                            }
+                        }
+                        
+                        return {
+                            amount: typeof amount === 'object' ? amount.value : amount,
+                            currency: currency,
+                            date: date,
+                            hash: tx.tx.hash
+                        };
+                    });
+
+                console.log(`✨ Found ${buildxPayments.length} payments to this wallet`);
+                console.log('Payment details:', JSON.stringify(buildxPayments, null, 2));
+
+                if (buildxPayments.length > 0) {
+                    resultDiv.className = 'airdrop-result success';
+                    const airdropList = buildxPayments.map(payment => 
+                        `• ${parseFloat(payment.amount).toLocaleString()} ${payment.currency} received on ${payment.date.toLocaleDateString()}`
+                    ).join('<br>');
+                    
+                    const resultText = `BuildX Airdrop Results\n` +
+                        `Wallet: ${walletAddress}\n` +
+                        `Found ${buildxPayments.length} airdrop(s):\n` +
+                        buildxPayments.map(payment => 
+                            `• ${parseFloat(payment.amount).toLocaleString()} ${payment.currency} received on ${payment.date.toLocaleDateString()}`
+                        ).join('\n');
+                    
+                    resultDiv.innerHTML = `
+                        <div class="result-content">
+                            <h3>✅ Airdrop Check Results</h3>
+                            <div class="result-details">
+                                ${airdropList}
+                            </div>
+                            <div class="result-actions">
+                                <button onclick="copyToClipboard(\`${resultText}\`)">
+                                    <i class="fas fa-copy"></i> Copy Results
+                                </button>
+                                <a href="https://t.me/buildxrp/8018" target="_blank" class="telegram-link">
+                                    <i class="fab fa-telegram"></i> Join Our Telegram
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.className = 'airdrop-result info';
+                    resultDiv.innerHTML = `
+                        <div class="result-content">
+                            <h3>ℹ️ No Airdrops Found Yet</h3>
+                            <p>We haven't found any airdrops for this wallet yet. Don't worry - more airdrops might be coming!</p>
+                            <div class="result-actions">
+                                <a href="https://t.me/buildxrp/8018" target="_blank" class="telegram-link">
+                                    <i class="fab fa-telegram"></i> Join Our Telegram
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }
+
+            } catch (error) {
+                console.error('❌ Error:', error);
+                resultDiv.className = 'airdrop-result error';
+                resultDiv.innerHTML = `Error checking airdrop status: ${error.message}. Please try again later.`;
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('airdropCheckerModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Add copy to clipboard function
+        function copyToClipboard(text) {
+            // Clean up the text by replacing HTML line breaks with actual line breaks
+            const cleanText = text.replace(/<br>/g, '\n');
+            
+            navigator.clipboard.writeText(cleanText)
+                .then(() => {
+                    // Show a brief "Copied!" message
+                    const copyBtn = document.querySelector('.result-actions button');
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy:', err);
+                    alert('Failed to copy to clipboard. Please try again.');
+                });
+        }
     </script>
 </body>
 </html> 
