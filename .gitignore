@@ -1,0 +1,17 @@
+# Template files
+*Template.zip
+2086886-1585195899946_Na - Template.zip
+2086886-1585195899946_Na - Template/
+
+# General files to ignore
+.DS_Store
+node_modules/
+dist/
+.cache/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo 
