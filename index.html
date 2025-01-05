@@ -1286,16 +1286,20 @@
             border: none;
             cursor: pointer;
             padding: 10px;
+            -webkit-tap-highlight-color: transparent; /* Fix for mobile tap highlight */
         }
 
         @media (max-width: 768px) {
             .mobile-menu-toggle {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1002; /* Ensure button stays above menu */
             }
 
             .nav-links {
                 display: none;
-                position: absolute;
+                position: fixed; /* Change to fixed for better mobile compatibility */
                 top: 70px;
                 left: 0;
                 right: 0;
@@ -1305,10 +1309,36 @@
                 gap: 20px;
                 border-top: 1px solid var(--border-color);
                 border-bottom: 1px solid var(--border-color);
+                z-index: 1001; /* High z-index for Telegram */
+                -webkit-transform: translateZ(0); /* Force GPU acceleration */
+                transform: translateZ(0);
             }
 
             .nav-links.active {
                 display: flex;
+                -webkit-animation: slideDown 0.3s ease;
+                animation: slideDown 0.3s ease;
+            }
+
+            @-webkit-keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                background: var(--bg-secondary);
             }
 
             .nav-links a, 
@@ -1317,6 +1347,9 @@
                 width: 100%;
                 text-align: center;
                 padding: 12px;
+                background: var(--bg-card);
+                border-radius: 8px;
+                margin: 2px 0;
             }
 
             .social-dropdown {
@@ -1324,7 +1357,7 @@
             }
 
             .social-content {
-                position: static;
+                position: relative;
                 width: 100%;
                 margin-top: 10px;
                 box-shadow: none;
@@ -1335,6 +1368,9 @@
             .social-content a {
                 padding: 12px;
                 text-align: center;
+                background: var(--bg-card);
+                border-radius: 8px;
+                margin: 2px 0;
             }
         }
     </style>
