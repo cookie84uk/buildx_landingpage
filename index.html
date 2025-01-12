@@ -45,6 +45,9 @@
     <!-- Add Ripple lib -->
     <script src="https://unpkg.com/ripple-lib@1.10.1/build/ripple-latest-min.js"></script>
     
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
     <style>
         :root {
             --bg-primary: #0D1117;
@@ -1713,6 +1716,213 @@
             </div>
         </div>
     </section>
+
+    <!-- Add Wallet Section before the footer -->
+    <section class="wallet-section">
+        <div class="container">
+            <h2>Wallet Distribution</h2>
+            <div class="wallet-grid">
+                <div class="wallet-card" id="bx-main">
+                    <h3><i class="fas fa-wallet"></i> BuildX Main (BX)</h3>
+                    <div class="wallet-balance" id="bx-main-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">Bxv</span>Ermr7U6fJ4CcFbbCsFPmekWQCWmLZx</code>
+                        <button onclick="copyAddress('rBxvErmr7U6fJ4CcFbbCsFPmekWQCWmLZx')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">Main wallet for BuildX operations</p>
+                </div>
+
+                <div class="wallet-card" id="bx-operations">
+                    <h3><i class="fas fa-cogs"></i> Operations (BXO)</h3>
+                    <div class="wallet-balance" id="bx-operations-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">Bxo</span>YZT4BzkaXvCoiagRgxifQxF6B56rb7</code>
+                        <button onclick="copyAddress('rBxoYZT4BzkaXvCoiagRgxifQxF6B56rb7')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">Day-to-day operations and infrastructure maintenance (50M tokens)</p>
+                </div>
+
+                <div class="wallet-card" id="bx-marketing">
+                    <h3><i class="fas fa-bullhorn"></i> Marketing (BXM)</h3>
+                    <div class="wallet-balance" id="bx-marketing-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">BXM</span>JMzMbDiGfrZpEw45oNAXhKbnsxpdGW</code>
+                        <button onclick="copyAddress('rBXMJMzMbDiGfrZpEw45oNAXhKbnsxpdGW')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">Campaigns, advertisements and promotions (50M tokens)</p>
+                </div>
+
+                <div class="wallet-card" id="bx-exchange">
+                    <h3><i class="fas fa-exchange-alt"></i> Exchange Listings (BXE)</h3>
+                    <div class="wallet-balance" id="bx-exchange-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">Bxe</span>BjSM7qxuk6D4P3MKRoDfbrNNP55FRc</code>
+                        <button onclick="copyAddress('rBxeBjSM7qxuk6D4P3MKRoDfbrNNP55FRc')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">CEX and DEX listing fees (40M tokens)</p>
+                </div>
+
+                <div class="wallet-card" id="bx-partner">
+                    <h3><i class="fas fa-handshake"></i> Partner Liquidity (BXP)</h3>
+                    <div class="wallet-balance" id="bx-partner-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">BxP</span>4shWY1QQwuDxKFaiQGvDAtczdLRDx8</code>
+                        <button onclick="copyAddress('rBxP4shWY1QQwuDxKFaiQGvDAtczdLRDx8')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">Partnership liquidity and project integrations (30M tokens)</p>
+                </div>
+
+                <div class="wallet-card" id="bx-staff">
+                    <h3><i class="fas fa-users"></i> Staff Payments (BXS)</h3>
+                    <div class="wallet-balance" id="bx-staff-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">Bxs</span>mVLnHMnjt3UDTBNu6pm6BujKQjDnDP</code>
+                        <button onclick="copyAddress('rBxsmVLnHMnjt3UDTBNu6pm6BujKQjDnDP')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">Team compensation and performance incentives (30M tokens)</p>
+                </div>
+
+                <div class="wallet-card" id="bx-community">
+                    <h3><i class="fas fa-users"></i> Community (BXC)</h3>
+                    <div class="wallet-balance" id="bx-community-balance">Loading...</div>
+                    <div class="wallet-address">
+                        <code>r<span class="highlight">Bxc</span>vD9Jw6JgfR5sz2XDiXnnhVhK5V6kNb</code>
+                        <button onclick="copyAddress('rBxcvD9Jw6JgfR5sz2XDiXnnhVhK5V6kNb')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="wallet-purpose">Community initiatives and engagement rewards (10M tokens)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // ... existing code ...
+
+    // Wallet addresses mapping
+    const walletAddresses = {
+        'bx-main': 'rBxvErmr7U6fJ4CcFbbCsFPmekWQCWmLZx',
+        'bx-operations': 'rBxoYZT4BzkaXvCoiagRgxifQxF6B56rb7',
+        'bx-marketing': 'rBXMJMzMbDiGfrZpEw45oNAXhKbnsxpdGW',
+        'bx-exchange': 'rBxeBjSM7qxuk6D4P3MKRoDfbrNNP55FRc',
+        'bx-partner': 'rBxP4shWY1QQwuDxKFaiQGvDAtczdLRDx8',
+        'bx-staff': 'rBxsmVLnHMnjt3UDTBNu6pm6BujKQjDnDP',
+        'bx-community': 'rBxcvD9Jw6JgfR5sz2XDiXnnhVhK5V6kNb'
+    };
+
+    // BuildX token currency hex code
+    const BUILDX_CURRENCY = '4275696C6458000000000000000000000000000000'; // 'BuildX' in hex
+    const BUILDX_ISSUER = 'r4WzuU4bdTcyUtdSyhC8nsLUhv3Ce2xyDy'; // Correct issuer wallet
+
+    // Function to copy wallet address
+    function copyAddress(address) {
+        navigator.clipboard.writeText(address).then(() => {
+            // You could add a toast notification here
+            console.log('Address copied:', address);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+        });
+    }
+
+    // Function to update wallet balances
+    async function updateWalletBalances() {
+        try {
+            for (const [id, address] of Object.entries(walletAddresses)) {
+                const ws = new WebSocket('wss://xrplcluster.com');
+                
+                // Get XRP balance first
+                await new Promise((resolve, reject) => {
+                    ws.onopen = () => {
+                        const xrpRequest = {
+                            command: "account_info",
+                            account: address,
+                            ledger_index: "validated"
+                        };
+                        ws.send(JSON.stringify(xrpRequest));
+                        resolve();
+                    };
+                    ws.onerror = reject;
+                });
+
+                const xrpResponse = await new Promise((resolve, reject) => {
+                    ws.onmessage = (event) => {
+                        const data = JSON.parse(event.data);
+                        resolve(data);
+                    };
+                });
+
+                // Then get BuildX balance
+                const tokenRequest = {
+                    command: "account_lines",
+                    account: address,
+                    ledger_index: "validated"
+                };
+                ws.send(JSON.stringify(tokenRequest));
+
+                const tokenResponse = await new Promise((resolve, reject) => {
+                    ws.onmessage = (event) => {
+                        const data = JSON.parse(event.data);
+                        resolve(data);
+                        ws.close();
+                    };
+                });
+
+                // Update the balance display
+                const balanceElement = document.getElementById(`${id}-balance`);
+                if (balanceElement) {
+                    let balanceHtml = '<div class="balance-container">';
+                    
+                    // Add XRP balance
+                    if (xrpResponse.result && xrpResponse.result.account_data) {
+                        const xrpBalance = (xrpResponse.result.account_data.Balance / 1000000).toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        balanceHtml += `<div class="balance-row"><span class="balance-amount">${xrpBalance}</span> <span class="balance-currency">XRP</span></div>`;
+                    }
+
+                    // Add BuildX balance
+                    if (tokenResponse.result && tokenResponse.result.lines) {
+                        const buildxLine = tokenResponse.result.lines.find(line => 
+                            line.account === BUILDX_ISSUER
+                        );
+                        if (buildxLine) {
+                            const buildxBalance = Math.abs(parseFloat(buildxLine.balance)).toLocaleString(undefined, {
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0
+                            });
+                            balanceHtml += `<div class="balance-row"><span class="balance-amount">${buildxBalance}</span> <span class="balance-currency">BuildX</span></div>`;
+                        }
+                    }
+
+                    balanceHtml += '</div>';
+                    balanceElement.innerHTML = balanceHtml || 'No balance';
+                }
+            }
+        } catch (error) {
+            console.error('Error updating wallet balances:', error);
+        }
+    }
+
+    // Update balances initially and every 30 seconds
+    document.addEventListener('DOMContentLoaded', () => {
+        updateWalletBalances();
+        setInterval(updateWalletBalances, 30000);
+    });
+    </script>
 
     <footer>
         <div class="container">

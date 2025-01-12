@@ -1,32 +1,22 @@
-# BuildX Landing Page
+# BuildX
 
-Next-Generation XRPL Token Distribution Platform landing page.
+Landing page for BuildX platform.
 
-## Features
+## Overview
 
-- Modern, responsive design
-- Real-time analytics information
-- AMM Integration details
-- Smart Classification overview
-- Market Insights presentation
+A modern, responsive landing page showcasing platform features and information.
 
 ## Setup
 
 1. Clone the repository
-```bash
-git clone https://github.com/cookie84uk/buildx_landingpage.git
-```
-
-2. Open index.html in your browser to view the site
+2. Open index.html in your browser
 
 ## Structure
 
 - `index.html` - Main landing page
-- `styles.css` - Styling and animations
-- `images/` - Image assets
+- `styles.css` - Styling
+- `assets/` - Resources
 
 ## Contact
 
-Join our community:
-- Telegram: [BuildX Community](https://t.me/buildxrp)
-- Twitter: [@BuildX](https://twitter.com/BuildX)
+For more information, please visit our website.
