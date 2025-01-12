@@ -677,18 +677,24 @@ footer .container {
 
 .wallet-address {
     background: var(--bg-secondary);
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .wallet-address code {
     font-family: monospace;
     color: var(--text-secondary);
+    font-size: 0.9rem;
+    word-break: break-all;
+    flex: 1;
+    min-width: 200px;
 }
 
 .wallet-address button {
@@ -698,6 +704,7 @@ footer .container {
     cursor: pointer;
     padding: 0.5rem;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .wallet-address button:hover {
@@ -721,6 +728,19 @@ footer .container {
     
     .wallet-section h2 {
         font-size: 2rem;
+    }
+
+    .wallet-card {
+        padding: 1.5rem;
+    }
+
+    .wallet-address {
+        padding: 0.5rem;
+    }
+
+    .wallet-address code {
+        font-size: 0.8rem;
+        min-width: 150px;
     }
 }
 
